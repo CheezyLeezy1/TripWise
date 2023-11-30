@@ -1,0 +1,36 @@
+<%= render partial: 'components/navbar' %>
+
+<div class="overflow-y-auto overflow-x-hidden fixed inset-0 z-20 flex justify-center items-center">
+  <div class="relative p-4 w-full max-w-md h-auto">
+    <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+      <h1 class="text-xl font-bold text-gray-900 dark:text-white text-center mb-8">
+        Reset your password
+      </h1>
+
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, id: 'reset-password-form' }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="mb-4">
+          <%= f.label :email, "Email", class: "block mb-2 text-sm font-medium text-gray-900 dark:text-white" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 block w-full p-3 dark:bg-gray-700", required: true %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Send reset instructions", class: "w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render partial: 'components/footer' %>
+
+<script>
+    document.getElementById('reset-password-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Email Sent');
+        window.location.href = '/'; // Redirect to root path
+    });
+</script>
+
+

@@ -1,0 +1,41 @@
+<%= stylesheet_link_tag 'application.css' %>
+
+
+<%= render partial: 'components/navbar' %>
+
+<section class="bg-white dark:bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')] flex flex-col justify-center items-start h-screen pl-10 max-w-3/4 mx-auto">
+  <div class="py-4 px-4 mx-auto max-w-screen-lg text-center lg:py-16 z-10 relative">
+    <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Guiding
+      Your Journeys.</h1>
+    <p class="mb-8 text-base font-normal text-gray-500 lg:text-lg sm:px-16 lg:px-48 dark:text-gray-200">
+      Capture and cherish every moment of your travels with <b class="text-blue-500">TripWise</b>, your go-to platform
+      for documenting your journeys! <br> <br>Create a personalized travel journal that brings your adventures to life,
+      ensuring every memory is treasured forever...</p>
+
+
+    <form class="w-full max-w-md mx-auto flex flex-col items-center">
+      <label for="default-email" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Email
+        sign-up</label>
+      <% if user_signed_in? %>
+        <%= link_to 'Start Planning!', countries_path, type: "button", class: 'w-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 mb-4' %>
+      <% else %>
+        <div class="relative flex items-center">
+          <%= link_to 'Sign Up', new_user_registration_path, id: 'signup-link', type: "button", class: 'text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2' %>
+        </div>
+      <% end %>
+    </form>
+  </div>
+</section>
+
+
+<%= render partial: 'components/footer' %>
+
+
+
+
+
+
+
+
+
+

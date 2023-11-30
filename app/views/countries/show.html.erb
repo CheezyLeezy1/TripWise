@@ -1,0 +1,72 @@
+<%= render partial: 'components/navbar' %>
+<%= csrf_meta_tags %>
+
+<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+
+<section class="bg-white dark:bg-gray-900 flex flex-col justify-start items-start pl-10 max-w-3/4 mx-auto">
+  <div class="py-4 px-4 mx-auto max-w-screen-xl text-center lg:py-8 z-10 relative">
+    <h1 class="mb-2 text-3xl font-extrabold tracking-tight text-gray-900 md:text-4xl lg:text-5xl dark:text-white">Your
+      Journeys, Documented with TripWise.</h1>
+    <p class="mb-4 text-sm font-normal text-gray-500 lg:text-md sm:px-12 lg:px-32 dark:text-gray-200">
+      Ready to document your incredible journeys? With <b class="text-blue-500">TripWise</b>, it's a breeze! Just click
+      the 'Add' button to start capturing your travel memories and create a journal that's uniquely yours. Let the
+      adventure begin!</p>
+    <% if user_signed_in? %>
+      <button id="show-form-button" type="button" class="text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Create</button>
+    <% else %>
+      <%= link_to 'Sign In or Sign Up to Create', new_user_session_path, class: 'text-white bg-gradient-to-br from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center' %>
+    <% end %>  </div>
+
+  <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">
+    <div id="country-form-container" style="display: none;">
+      <%= render 'components/country-form' %>
+    </div>
+  </div>
+
+  <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">
+    <% if @countries.present? %>
+      <% @countries.each do |country| %>
+        <a href="<%= country_cities_path(country) %>" class="country-card-link">
+          <%= render 'components/item-card', item: country, edit_path: edit_country_path(country), delete_path: country_path(country) %>
+        </a>
+      <% end %>
+    <% end %>
+  </div>
+
+</section>
+
+<%= render partial: 'components/footer' %>
+
+<script>
+    function checkModals() {
+        let modalOpen = false;
+        const showFormButton = document.getElementById('show-form-button');
+        const countryFormContainer = document.getElementById('country-form-container');
+        const staticModal = document.getElementById('static-modal');
+        const closeForm = document.getElementById('x-button');
+
+        // Function to toggle modal visibility
+        function toggleModal() {
+            console.log('Button clicked'); // Add this line for debugging
+            if (!modalOpen) {
+                countryFormContainer.style.display = 'block';
+                staticModal.style.display = 'block';
+                modalOpen = true;
+            } else {
+                countryFormContainer.style.display = 'none';
+                staticModal.style.display = 'none';
+                modalOpen = false;
+            }
+        }
+
+        // Event listener to toggle the modal
+        showFormButton.addEventListener('click', toggleModal);
+
+        // Event listener to close the modal using the x-button
+        closeForm.addEventListener('click', toggleModal);
+    }
+
+    checkModals();
+</script>
+
