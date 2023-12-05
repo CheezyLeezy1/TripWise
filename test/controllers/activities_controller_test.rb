@@ -34,7 +34,6 @@ class ActivitiesControllerTest < ActionController::TestCase
     assert_not_nil flash[:notice]
   end
 
-
   test 'should get edit' do
     activity = activities(:valid_activity)
     get :edit, params: { country_id: @city.country.id, city_id: @city.id, id: activity.id }
@@ -71,6 +70,3 @@ class ActivitiesControllerTest < ActionController::TestCase
     assert_not_nil flash[:notice]
   end
 end
-
-
-

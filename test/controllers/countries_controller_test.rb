@@ -35,7 +35,7 @@ class CountriesControllerTest < ActionController::TestCase
   end
 
   test 'should get edit' do
-    country = countries(:france) 
+    country = countries(:france)
     get :edit, params: { id: country.id }
     assert_response :success
     assert_template :edit
@@ -64,4 +64,3 @@ class CountriesControllerTest < ActionController::TestCase
     assert_redirected_to countries_path
   end
 end
-

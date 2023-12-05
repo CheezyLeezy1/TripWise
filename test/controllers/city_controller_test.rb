@@ -53,4 +53,3 @@ class CitiesControllerTest < ActionController::TestCase
     assert_equal 'City was successfully deleted.', flash[:notice]
   end
 end
-

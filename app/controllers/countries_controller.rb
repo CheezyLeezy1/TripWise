@@ -19,7 +19,6 @@ class CountriesController < ApplicationController
     end
   end
 
-
   def edit
     @country = Country.find(params[:id])
   end
@@ -32,7 +31,6 @@ class CountriesController < ApplicationController
       render :edit
     end
   end
-
 
   def destroy
     puts 'Destroy action called'
