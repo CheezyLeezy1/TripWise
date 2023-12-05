@@ -280,7 +280,7 @@ DEPENDENCIES
   rubocop
   selenium-webdriver
   sprockets-rails
-  sqlite3
+  sqlite3 (~> 1.4)
   stimulus-rails
   tailwindcss-rails (~> 2.0)
   turbo-rails
