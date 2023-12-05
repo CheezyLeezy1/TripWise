@@ -1,6 +1,6 @@
 class CountriesController < ApplicationController
   before_action :authenticate_user!
-  before_action :load_countries, only: [:show, :create, :edit, :update, :destroy]
+  before_action :load_countries, only: %i[show create edit update destroy]
 
   def show
     @country = Country.new
@@ -8,11 +8,11 @@ class CountriesController < ApplicationController
   end
 
   def create
-    @country = current_user.countries.build(country_params)
+    @country = current_user.country.build(country_params)
     if @country.save
       redirect_to countries_path
     else
-      redirect_to countries_path, alert: "Country could not be created."
+      redirect_to countries_path, alert: 'Country could not be created.'
     end
   end
 
@@ -46,7 +46,7 @@ class CountriesController < ApplicationController
   end
 
   def load_countries
-    @countries = current_user.countries
+    @countries = current_user.country
   end
 end
 

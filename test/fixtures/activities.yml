@@ -1,13 +1,14 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
-  rating: 1
-  city: one
+valid_activity:
+  title: "Sightseeing"
+  description: "Visiting famous landmarks in the city."
+  user: john_doe
+  city: valid_city
 
-two:
-  title: MyString
-  description: MyText
-  rating: 1
-  city: two
+invalid_activity:
+  title: ""
+  description: "Visiting famous landmarks in the city."
+  user: john_doe
+  city: valid_city
+

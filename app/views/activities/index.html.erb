@@ -25,7 +25,7 @@
   <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">
     <% if @activities.present? %>
       <% @activities.each do |activity| %>
-        <%= render 'components/item-card', item: activity, edit_path: edit_country_city_activity_path(activity.city.country, activity.city, activity), delete_path: country_city_activity_path(activity.city.country, activity.city, activity) %>
+        <%= render_card_for_item(activity) %>
       <% end %>
     <% end %>
 

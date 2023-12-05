@@ -1,9 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+usa:
+  title: "United States of America"
+  description: "A country in North America."
+  user: john_doe
 
-two:
-  title: MyString
-  description: MyText
+france:
+  title: "France"
+  description: "A country in Western Europe."
+  user: john_doe
+
+japan:
+  title: "Japan"
+  description: "An island country in East Asia."
+  user: john_doe
+

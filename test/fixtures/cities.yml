@@ -1,9 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
-  description: MyText
+# A valid city entry
+valid_city:
+  title: "New York"
+  description: "A city in the United States."
+  user: john_doe
+  country: usa
 
-two:
-  title: MyString
-  description: MyText
+# An invalid city entry (e.g., missing title)
+invalid_city:
+  title: ''
+  description: "A city in the United States."
+  user: john_doe
+  country: usa
+

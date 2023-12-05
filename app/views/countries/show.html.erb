@@ -28,11 +28,12 @@
     <% if @countries.present? %>
       <% @countries.each do |country| %>
         <a href="<%= country_cities_path(country) %>" class="country-card-link">
-          <%= render 'components/item-card', item: country, edit_path: edit_country_path(country), delete_path: country_path(country) %>
+          <%= render_card_for_item(country) %>
         </a>
       <% end %>
     <% end %>
   </div>
+
 
 </section>
 
