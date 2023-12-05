@@ -11,13 +11,14 @@ class CountriesController < ApplicationController
   end
 
   def create
-    @country = current_user.country.build(country_params)
+    @country = current_user.countries.build(country_params)
     if @country.save
-      redirect_to countries_path
+      redirect_to countries_path, notice: 'Country was successfully created.'
     else
       redirect_to countries_path, alert: 'Country could not be created.'
     end
   end
+
 
   def edit
     @country = Country.find(params[:id])
@@ -26,11 +27,12 @@ class CountriesController < ApplicationController
   def update
     @country = Country.find(params[:id])
     if @country.update(country_params)
-      redirect_to countries_path, notice: 'Country updated successfully.'
+      redirect_to countries_path, notice: 'Country was successfully updated.'
     else
       render :edit
     end
   end
+
 
   def destroy
     puts 'Destroy action called'
@@ -49,6 +51,6 @@ class CountriesController < ApplicationController
   end
 
   def load_countries
-    @countries = current_user.country
+    @countries = current_user.countries
   end
 end
