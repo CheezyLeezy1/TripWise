@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-
+# Comment
 class CountryCard
   def initialize(country)
     @country = country
@@ -31,4 +31,3 @@ class CountryCard
     html.html_safe
   end
 end
-

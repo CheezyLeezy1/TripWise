@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Comment
 class CitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_country
@@ -19,7 +22,6 @@ class CitiesController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @city = City.find(params[:id])
@@ -55,5 +57,3 @@ class CitiesController < ApplicationController
     params.require(:city).permit(:title, :description, :image)
   end
 end
-
-

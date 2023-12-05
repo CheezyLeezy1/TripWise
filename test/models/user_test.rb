@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
@@ -28,4 +29,3 @@ class UserTest < ActiveSupport::TestCase
     assert_not_nil @user.errors[:email], 'no validation error for email format present'
   end
 end
-

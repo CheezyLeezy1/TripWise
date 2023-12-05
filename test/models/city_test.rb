@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'test_helper'
 
 class CityTest < ActiveSupport::TestCase
@@ -35,10 +36,9 @@ class CityTest < ActiveSupport::TestCase
     duplicate_city = @country.cities.build(title: @valid_city.title, description: 'Another city')
     assert_not duplicate_city.valid?
   end
-  
+
   test 'city title should not be case-sensitive within the same country' do
     duplicate_city = @country.cities.build(title: @valid_city.title.downcase, description: 'Another city')
     assert_not duplicate_city.valid?
   end
 end
-

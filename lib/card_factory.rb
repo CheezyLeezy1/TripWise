@@ -3,7 +3,7 @@
 require 'activity_card'
 require 'city_card'
 require 'country_card'
-
+# Comment
 class CardFactory
   def self.create_card(item)
     case item

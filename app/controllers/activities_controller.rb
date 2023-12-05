@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Comment
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_country
@@ -20,7 +23,6 @@ class ActivitiesController < ApplicationController
       render :new
     end
   end
-
 
   def edit
     @activity = Activity.find(params[:id])
@@ -60,5 +62,3 @@ class ActivitiesController < ApplicationController
     params.require(:activity).permit(:title, :description, :rating, :image)
   end
 end
-
-

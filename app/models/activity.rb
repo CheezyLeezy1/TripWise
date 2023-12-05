@@ -1,4 +1,6 @@
 # frozen_string_literal: true
+
+# Comment
 class Activity < ApplicationRecord
   belongs_to :user
   belongs_to :city

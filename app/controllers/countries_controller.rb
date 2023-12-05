@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Comment
 class CountriesController < ApplicationController
   before_action :authenticate_user!
   before_action :load_countries, only: %i[show create edit update destroy]
@@ -49,6 +52,3 @@ class CountriesController < ApplicationController
     @countries = current_user.country
   end
 end
-
-
-

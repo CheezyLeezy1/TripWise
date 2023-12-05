@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Comment
 class City < ApplicationRecord
   belongs_to :user
   belongs_to :country
@@ -7,4 +10,3 @@ class City < ApplicationRecord
   validates :title, presence: true
   validates :description, presence: true
 end
-

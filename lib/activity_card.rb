@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# Comment
 class ActivityCard
   def initialize(activity)
     @activity = activity
