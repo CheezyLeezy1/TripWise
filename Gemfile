@@ -17,6 +17,7 @@ gem 'puma', '~> 5.0'
 
 gem 'pg'
 
+gem 'bundler-audit', group: %i[development test]
 
 
 # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
