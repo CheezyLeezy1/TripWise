@@ -18,7 +18,7 @@
 
   <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">
     <div id="activity-form-container" style="display: none;">
-      <%= render 'components/activity-form', city: @city, activity: @activity %>
+      <%= FormPresenter.new(@activity, self).render_form %>
     </div>
   </div>
 

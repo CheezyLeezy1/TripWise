@@ -20,7 +20,7 @@
 
   <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">
     <div id="country-form-container" style="display: none;">
-      <%= render 'components/city-form', country: @country, city: @city %>
+      <%= FormPresenter.new(@city, self).render_form %>
     </div>
   </div>
   <div class="flex justify-center space-x-10 my-2 mt-4 mx-auto">

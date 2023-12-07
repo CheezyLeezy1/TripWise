@@ -14,7 +14,7 @@
               Sign in to your account
             </h1>
 
-            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <%= form_for(resource, as: resource_name, url: user_session_path(resource_name)) do |f| %>
               <% if resource.errors.any? %>
                 <div class="field mb-6">
                   <div class="text-red-600 dark:text-red-400">

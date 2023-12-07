@@ -18,7 +18,7 @@
         <%= form_with(model: [@country, @city, @activity], local: true) do |form| %>
           <div class="mb-6">
             <%= form.label :title, class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
-            <%= form.text_field :title, id: 'countries', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', placeholder: 'Activity name', required: true %>
+            <%= form.text_field :title, id: 'activities', class: 'shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light', placeholder: 'Activity name', required: true %>
           </div>
 
           <div class="mb-6">
@@ -28,7 +28,7 @@
 
           <div class="mb-6">
             <%= form.label :image, 'Upload file', class: 'block mb-2 text-sm font-medium text-gray-900 dark:text-white' %>
-            <%= form.file_field :image, id: 'country-image', class: 'block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400',  required: true %>
+            <%= form.file_field :image, id: 'activity-image', class: 'block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400',  required: true %>
             <div class="mt-1 text-sm text-gray-500 dark:text-gray-300" id="user_avatar_help">A picture is useful to
               remember the good times!
             </div>
