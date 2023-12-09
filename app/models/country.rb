@@ -5,7 +5,7 @@ class Country < ApplicationRecord
   belongs_to :user
 
   has_one_attached :image
-  has_many :cities
+  has_many :cities, dependent: :destroy
   has_many :activities, through: :cities
 
   validates :title, presence: true
